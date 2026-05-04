@@ -1,6 +1,6 @@
 # Dasom (다솜)
 
-**AI-powered relationship conflict mediator.** Dasom is Korean for "love."
+**AI-powered relationship conflict mediator.** Dasom is indigenous Korean word for "love."
 
 Each person submits their side of a conflict privately. Five AI agents — two intake agents, two persona agents, and a neutral mediator — work together to simulate the conflict and produce a structured, empathetic resolution that neither person could reach on their own.
 
