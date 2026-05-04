@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/* ── Dasom design tokens ──────────────────────────────────────────────────── */
+
+:root {
+  --color-primary:     #7C9E87;   /* sage green — calming, grounding */
+  --color-background:  #FAF7F2;   /* warm cream — soft, non-clinical */
+  --color-accent:      #C4A882;   /* warm sand — warmth, humanity */
+  --color-text:        #2C2C2C;   /* near black */
+  --color-surface:     #FFFFFF;   /* white panels */
+  --color-surface-alt: #F0EDE8;   /* subtle warm gray for secondary panels */
+  --color-message-bg:  #7C9E8712; /* sage tint for personal message section */
+  --color-border:      #E8E4DF;   /* soft warm border */
+}
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ── Animations ───────────────────────────────────────────────────────────── */
+
+@keyframes pulse-ring {
+  0%, 100% { transform: scale(1);    opacity: 0.18; }
+  50%       { transform: scale(1.35); opacity: 0.06; }
+}
+
+@keyframes pulse-gentle {
+  0%, 100% { transform: scale(1);    opacity: 0.85; }
+  50%       { transform: scale(1.06); opacity: 1;    }
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}

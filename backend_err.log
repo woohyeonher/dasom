@@ -1,0 +1,264 @@
+INFO:     Started server process [77664]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+ERROR:    Exception in ASGI application
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\sse_starlette\_utils.py", line 26, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\sse_starlette\sse.py", line 479, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 421, in run_asgi
+    |     result = await app(  # type: ignore[func-returns-value]
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 56, in __call__
+    |     return await self.app(scope, receive, send)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\fastapi\applications.py", line 1159, in __call__
+    |     await super().__call__(scope, receive, send)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\applications.py", line 90, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    |     raise exc
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 88, in __call__
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    |     await route.handle(scope, receive, send)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\fastapi\routing.py", line 134, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\fastapi\routing.py", line 121, in app
+    |     await response(scope, receive, send)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\sse_starlette\sse.py", line 478, in __call__
+    |     with collapse_excgroups():
+    |   File "C:\Users\herpa\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    |     self.gen.throw(value)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\sse_starlette\_utils.py", line 34, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\sse_starlette\sse.py", line 482, in cancel_on_finish
+    |     await coro()
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\sse_starlette\sse.py", line 360, in _stream_response
+    |     async for data in self.body_iterator:
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\main.py", line 201, in _gen
+    |     print(f"BOTH READY CHECK: {both_ready(session_code)} session={session_code}", flush=True)
+    |                                ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\session\manager.py", line 191, in both_ready
+    |     print(
+    |   File "C:\Users\herpa\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    |     return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    | UnicodeEncodeError: 'charmap' codec can't encode character '\u2192' in position 90: character maps to <undefined>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 421, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 56, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\fastapi\applications.py", line 1159, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\fastapi\routing.py", line 121, in app
+    await response(scope, receive, send)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\sse_starlette\sse.py", line 478, in __call__
+    with collapse_excgroups():
+  File "C:\Users\herpa\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\sse_starlette\_utils.py", line 34, in collapse_excgroups
+    raise exc
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\sse_starlette\sse.py", line 482, in cancel_on_finish
+    await coro()
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\sse_starlette\sse.py", line 360, in _stream_response
+    async for data in self.body_iterator:
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\main.py", line 201, in _gen
+    print(f"BOTH READY CHECK: {both_ready(session_code)} session={session_code}", flush=True)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\session\manager.py", line 191, in both_ready
+    print(
+  File "C:\Users\herpa\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2192' in position 90: character maps to <undefined>
+ERROR:    Exception in ASGI application
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\sse_starlette\_utils.py", line 26, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\sse_starlette\sse.py", line 479, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 421, in run_asgi
+    |     result = await app(  # type: ignore[func-returns-value]
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 56, in __call__
+    |     return await self.app(scope, receive, send)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\fastapi\applications.py", line 1159, in __call__
+    |     await super().__call__(scope, receive, send)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\applications.py", line 90, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    |     raise exc
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 88, in __call__
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    |     await route.handle(scope, receive, send)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\fastapi\routing.py", line 134, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\fastapi\routing.py", line 121, in app
+    |     await response(scope, receive, send)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\sse_starlette\sse.py", line 478, in __call__
+    |     with collapse_excgroups():
+    |   File "C:\Users\herpa\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    |     self.gen.throw(value)
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\sse_starlette\_utils.py", line 34, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\sse_starlette\sse.py", line 482, in cancel_on_finish
+    |     await coro()
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\sse_starlette\sse.py", line 360, in _stream_response
+    |     async for data in self.body_iterator:
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\main.py", line 201, in _gen
+    |     print(f"BOTH READY CHECK: {both_ready(session_code)} session={session_code}", flush=True)
+    |                                ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\session\manager.py", line 191, in both_ready
+    |     print(
+    |   File "C:\Users\herpa\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    |     return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    | UnicodeEncodeError: 'charmap' codec can't encode character '\u2192' in position 90: character maps to <undefined>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 421, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 56, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\fastapi\applications.py", line 1159, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\fastapi\routing.py", line 121, in app
+    await response(scope, receive, send)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\sse_starlette\sse.py", line 478, in __call__
+    with collapse_excgroups():
+  File "C:\Users\herpa\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\sse_starlette\_utils.py", line 34, in collapse_excgroups
+    raise exc
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\sse_starlette\sse.py", line 482, in cancel_on_finish
+    await coro()
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\.venv\Lib\site-packages\sse_starlette\sse.py", line 360, in _stream_response
+    async for data in self.body_iterator:
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\main.py", line 201, in _gen
+    print(f"BOTH READY CHECK: {both_ready(session_code)} session={session_code}", flush=True)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\herpa\OneDrive\Desktop\4_Agentic_AI\Projects\Project3\Dasom\backend\session\manager.py", line 191, in both_ready
+    print(
+  File "C:\Users\herpa\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2192' in position 90: character maps to <undefined>

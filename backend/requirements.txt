@@ -1,0 +1,29 @@
+# ── Web ────────────────────────────────────────────────────────────────────────
+fastapi==0.136.1
+uvicorn[standard]==0.46.0
+sse-starlette==3.4.1
+python-multipart==0.0.27
+
+# ── LangGraph & LangChain ──────────────────────────────────────────────────────
+langgraph==1.1.10
+langchain==1.2.16
+langchain-core==1.3.2          # already installed; pin — breaking changes are common
+langchain-text-splitters==1.1.2
+langchain-google-vertexai==3.2.2  # ChatVertexAI for Gemini 2.0 Flash + 2.5 Pro
+langsmith==0.7.38
+
+# ── Google / Vertex AI ─────────────────────────────────────────────────────────
+# google-genai is the current unified SDK used for embeddings (replaces vertexai SDK)
+google-genai==1.73.1
+google-cloud-aiplatform==1.149.0
+
+# ── RAG ────────────────────────────────────────────────────────────────────────
+chromadb==1.5.8
+
+# ── Utilities ──────────────────────────────────────────────────────────────────
+python-dotenv==1.2.2
+pydantic==2.13.3
+pydantic-settings==2.14.0
+requests==2.33.1
+beautifulsoup4==4.14.3
+lxml==6.1.0

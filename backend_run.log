@@ -1,0 +1,23 @@
+INFO:     127.0.0.1:54883 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52014 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52014 - "POST /session/create HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52014 - "POST /session/join/HSN9GG HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52014 - "POST /session/join/HSN9GG HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:52016 - "GET /stream/intake/HSN9GG/a HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52021 - "POST /intake/message HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52021 - "POST /intake/message HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52021 - "POST /intake/message HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52021 - "POST /intake/message HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52021 - "POST /intake/message HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51980 - "GET /stream/simulation/HSN9GG HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51982 - "GET /stream/intake/HSN9GG/b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51985 - "POST /intake/message HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51985 - "POST /intake/message HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51985 - "POST /intake/message HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51985 - "POST /intake/message HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51985 - "POST /intake/message HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51985 - "POST /intake/message HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52072 - "GET /stream/simulation/HSN9GG HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52185 - "GET /result/HSN9GG/a HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52185 - "GET /result/HSN9GG/b HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52188 - "GET /health HTTP/1.1" 200 OK

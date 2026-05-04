@@ -1,0 +1,22 @@
+[debug] [2026-05-04T20:05:21.761Z] ----------------------------------------------------------------------
+[debug] [2026-05-04T20:05:21.766Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\herpa\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js projects:addfirebase ieor-4576-agents-487001
+[debug] [2026-05-04T20:05:21.766Z] CLI Version:   15.16.0
+[debug] [2026-05-04T20:05:21.766Z] Platform:      win32
+[debug] [2026-05-04T20:05:21.766Z] Node Version:  v24.12.0
+[debug] [2026-05-04T20:05:21.766Z] Time:          Mon May 04 2026 16:05:21 GMT-0400 (미 동부 하계 표준시)
+[debug] [2026-05-04T20:05:21.767Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-05-04T20:05:21.777Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-05-04T20:05:21.778Z] > authorizing via signed-in user (wh2624@columbia.edu)
+[debug] [2026-05-04T20:05:21.782Z] Checked if tokens are valid: true, expires at: 1777928687919
+[debug] [2026-05-04T20:05:21.782Z] Checked if tokens are valid: true, expires at: 1777928687919
+[debug] [2026-05-04T20:05:21.784Z] >>> [apiv2][query] POST https://firebase.googleapis.com/v1beta1/projects/ieor-4576-agents-487001:addFirebase [none]
+[debug] [2026-05-04T20:05:22.165Z] <<< [apiv2][status] POST https://firebase.googleapis.com/v1beta1/projects/ieor-4576-agents-487001:addFirebase 403
+[debug] [2026-05-04T20:05:22.165Z] <<< [apiv2][body] POST https://firebase.googleapis.com/v1beta1/projects/ieor-4576-agents-487001:addFirebase {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2026-05-04T20:05:22.167Z] Request to https://firebase.googleapis.com/v1beta1/projects/ieor-4576-agents-487001:addFirebase had HTTP Error: 403, The caller does not have permission
+[debug] [2026-05-04T20:05:22.168Z] FirebaseError: Request to https://firebase.googleapis.com/v1beta1/projects/ieor-4576-agents-487001:addFirebase had HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\herpa\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:53:12)
+    at RetryOperation._fn (C:\Users\herpa\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:333:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[error] 
+[error] Error: Failed to add Firebase to Google Cloud Platform project. See firebase-debug.log for more info.

@@ -1,0 +1,94 @@
+Session: DJF2GR  User B joined: b
+
+── PHASE 1: Intake (getting both users to ready=True) ──────────
+[INTAKE-A] Opening (259 chars): It takes real courage to reach out for support, and I want to acknowledge that you've taken a significant step. I'm Daso...
+[INTAKE-B] Opening (2510 chars): It takes real courage to take this first step, and I want to acknowledge that.
+
+I'm Dasom, your private intake companion...
+[INTAKE-A] After turn 1: confidence=Medium, ready=False
+[INTAKE-B] After turn 1: confidence=Medium, ready=False
+[INTAKE-B] After turn 2: confidence=High, ready=True
+[INTAKE-A] After turn 2: confidence=High, ready=True
+
+Intake results: A=True, B=True
+
+── PHASE 2: Simulation (both tabs connecting to SSE fan-out) ──
+(This will take 10–25 min — Gemini 2.5 Pro x2 + Llama Scout x N + synthesis)
+
+Both tabs connected to simulation SSE stream.
+[TAB-A] simulation_turn [A] (330 chars): Okay. I guess we should just start.
+
+Last Saturday, you came home two hours late and I hadn't heard...
+[TAB-B] simulation_turn [A] (330 chars): Okay. I guess we should just start.
+
+Last Saturday, you came home two hours late and I hadn't heard...
+[TAB-A] simulation_turn [B] (335 chars): It was Friday, and I remember it differently. I walked in the door, exhausted from a deadline I thou...
+[TAB-B] simulation_turn [B] (335 chars): It was Friday, and I remember it differently. I walked in the door, exhausted from a deadline I thou...
+[TAB-A] reasoning: The conversation has just started and both sides have only spoken twice, with new information still emerging.
+[TAB-B] reasoning: The conversation has just started and both sides have only spoken twice, with new information still emerging.
+[TAB-A] simulation_turn [A] (414 chars): Okay, Friday. Maybe the day doesn't matter so much. And maybe I didn't start the conversation in the...
+[TAB-B] simulation_turn [A] (414 chars): Okay, Friday. Maybe the day doesn't matter so much. And maybe I didn't start the conversation in the...
+[TAB-A] simulation_turn [B] (466 chars): I hear that you were worried, and I don't want you to feel that way. But when I'm in that deep on a...
+[TAB-B] simulation_turn [B] (466 chars): I hear that you were worried, and I don't want you to feel that way. But when I'm in that deep on a...
+[TAB-A] reasoning: The conversation is tense but new information is still emerging and both sides have not yet had an equal chance to expre
+[TAB-B] reasoning: The conversation is tense but new information is still emerging and both sides have not yet had an equal chance to expre
+[TAB-A] simulation_turn [A] (499 chars): I get that work can be a crisis. I really do. I'm not trying to diminish that you were under pressur...
+[TAB-B] simulation_turn [A] (499 chars): I get that work can be a crisis. I really do. I'm not trying to diminish that you were under pressur...
+[TAB-A] simulation_turn [B] (427 chars): It hurts to hear you say that, that you think I see you as an obligation. That's not it at all.
+
+But...
+[TAB-B] simulation_turn [B] (427 chars): It hurts to hear you say that, that you think I see you as an obligation. That's not it at all.
+
+But...
+[TAB-A] reasoning: The conversation is tense but new information is still emerging and both sides have not yet had an equal chance to expre
+[TAB-B] reasoning: The conversation is tense but new information is still emerging and both sides have not yet had an equal chance to expre
+[TAB-A] simulation_turn [A] (643 chars): I'm not trying to grade you. I'm trying to be in a relationship with you. And part of that, for me,...
+[TAB-B] simulation_turn [A] (643 chars): I'm not trying to grade you. I'm trying to be in a relationship with you. And part of that, for me,...
+[TAB-A] simulation_turn [B] (511 chars): I don't think your feelings are the problem. Of course you have a right to be upset.
+
+But when you s...
+[TAB-B] simulation_turn [B] (511 chars): I don't think your feelings are the problem. Of course you have a right to be upset.
+
+But when you s...
+[TAB-A] reasoning: The conversation has reached a depth where the underlying tension is becoming visible, but both sides still need to expr
+[TAB-B] reasoning: The conversation has reached a depth where the underlying tension is becoming visible, but both sides still need to expr
+[TAB-A] simulation_turn [A] (453 chars): I know you don't think you're choosing work over me. I believe you when you say that's not your inte...
+[TAB-B] simulation_turn [A] (453 chars): I know you don't think you're choosing work over me. I believe you when you say that's not your inte...
+[TAB-A] simulation_turn [B] (355 chars): It feels unbalanced from my side, too. It's as if there's no room for me to simply be overwhelmed by...
+[TAB-B] simulation_turn [B] (355 chars): It feels unbalanced from my side, too. It's as if there's no room for me to simply be overwhelmed by...
+[TAB-A] reasoning: Both sides have each spoken at least 3 times and the core underlying tension is now visible, with both partners expressi
+[TAB-B] reasoning: Both sides have each spoken at least 3 times and the core underlying tension is now visible, with both partners expressi
+
+[TAB-A] *** MEDIATOR INTERVENES *** reason: Both sides have each spoken at least 3 times and the core underlying tension is now visible, with both partners expressing deep-seated feelings and concerns.
+
+[TAB-B] *** MEDIATOR INTERVENES *** reason: Both sides have each spoken at least 3 times and the core underlying tension is now visible, with both partners expressing deep-seated feelings and concerns.
+
+[TAB-A] synthesis_complete (4827 chars)
+  section: ## WHAT EACH PERSON FELT
+  section: ## WHERE YOU ACTUALLY AGREE
+  section: ## THE CORE TENSION
+  section: ## A PATH FORWARD
+  section: ## A MESSAGE TO EACH PERSON
+
+[TAB-B] synthesis_complete (4827 chars)
+  section: ## WHAT EACH PERSON FELT
+  section: ## WHERE YOU ACTUALLY AGREE
+  section: ## THE CORE TENSION
+  section: ## A PATH FORWARD
+  section: ## A MESSAGE TO EACH PERSON
+
+[TAB-A] DONE event received (1/2)
+
+[TAB-B] DONE event received (2/2)
+
+── PHASE 3: Result endpoint ────────────────────────────────────
+GET /result/DJF2GR/a: 200  synthesis=4827 chars
+GET /result/DJF2GR/b: 200  synthesis=4827 chars
+
+── EVENT SUMMARY ───────────────────────────────────────────────
+  TAB-A: {'done': 1, 'mediator_intervention': 1, 'reasoning': 5, 'simulation_token': 30, 'simulation_turn': 10, 'synthesis_complete': 1, 'synthesis_token': 10}
+  TAB-B: {'done': 1, 'mediator_intervention': 1, 'reasoning': 5, 'simulation_token': 30, 'simulation_turn': 10, 'synthesis_complete': 1, 'synthesis_token': 10}
+
+Total events: 116 across both tabs
+Done events received: 2/2
+PASS: both tabs received done event -> both would navigate to /result

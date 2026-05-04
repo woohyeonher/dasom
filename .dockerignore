@@ -1,0 +1,25 @@
+# No venv — pip installs dependencies inside the image
+backend/.venv/
+
+# No compiled bytecode
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+
+# Never bake in secrets — inject as Cloud Run env vars at deploy time
+.env
+.env.*
+*.env
+
+# Raw source text files are not needed at runtime.
+# The pre-built vector store lives at backend/chroma_db/ and is copied above.
+data/
+
+# Frontend is deployed separately via Firebase Hosting
+frontend/
+
+# Local-only tooling
+scripts/
+.git/
+.gitignore
+CLAUDE.md
