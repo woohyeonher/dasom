@@ -100,6 +100,70 @@ A `connected` keep-alive event fires every 20 seconds to prevent idle chunked co
 
 ---
 
+## Data Flow
+
+### 1. Session Creation and Data Storage
+
+One partner creates a session and receives a 6-character code. They share it with their partner, who joins using that code. Both are now linked to the same session — but completely isolated from each other throughout intake.
+
+All session data lives in server memory: a Python dictionary keyed by the session code. There is no database. This is intentional — data exists only for the duration of the session and disappears when the server restarts, which is a deliberate privacy choice. Everything stored in RAM: each person's conversation history, their emotional analysis, the simulation transcript, and the final synthesis.
+
+### 2. Emotion Agent Intake
+
+Each person talks privately to their own emotion agent, running independently on Gemini 2.5 Flash via Vertex AI. The two agents have no knowledge of each other or what the other person is sharing.
+
+The agent does two things simultaneously: it holds a natural, flowing conversation, and it builds a structured profile behind the scenes — the 5W1H fields (Who, When, Where, What, Why, How), emotional labels, and underlying needs. The agent's reasoning streams to the screen in real time, but is automatically summarized into plain, empathetic language before the user sees it — the raw analytical reasoning stays hidden.
+
+A confidence score (Low → Low-Medium → Medium → Medium-High → High) updates after each confirmed exchange. The agent cannot proceed until it reaches Medium-High or High. Below that threshold, it keeps asking — gently, conversationally, never like a form.
+
+### 3. RAG — Retrieval Augmented Generation
+
+Before generating each response, the agents search two ChromaDB vector stores to find relevant material:
+
+- **Psychology KB** — content from the Gottman Institute, the Nonviolent Communication (NVC) framework, attachment theory research, and active listening and emotion regulation literature. This grounds the agents in real relationship psychology.
+- **Reddit examples** — real posts from r/relationship_advice and r/AITAH, used as few-shot examples. This teaches the agents how real people actually talk when they're hurt, frustrated, or feeling unheard — not how a textbook describes it.
+
+Retrieved content is injected into the agent's system prompt before each response. The result is output grounded in real psychology and real human language, rather than generic AI advice.
+
+### 4. Streaming — How Responses Appear in Real Time
+
+All agent output streams token by token using Server-Sent Events (SSE) — the server pushes a continuous stream to the browser rather than waiting for a complete response. There are two separate streams:
+
+- **Intake stream** — one per user, private. Carries conversation tokens, reasoning summaries, and analysis panel updates (confidence level, 5W1H fields filling in).
+- **Simulation stream** — shared between both users. When a persona agent produces a turn, the session manager fans it out to every registered SSE connection for that session simultaneously. Both people watch the simulation unfold on their own screens in real time.
+
+### 5. The Simulation
+
+Once both users reach Medium-High or High confidence, the LangGraph pipeline advances automatically — no manual trigger needed.
+
+Two persona agents are initialized, each given only their own person's emotional profile. They have no access to the other person's intake data. Both run on Gemini 2.5 Pro with opposing system prompts — they argue back and forth in turns, speaking as the people they represent.
+
+The Mediator Agent (Llama 4 Scout, Meta's open-source model served via Vertex AI MaaS) observes silently after every exchange. It does not intervene on a fixed schedule — it reads the transcript and decides for itself when it has seen enough: when the core tension is visible, when the conversation has gone circular, when a genuine softening has occurred, or when escalation has reached a point of diminishing returns.
+
+### 6. LangGraph Orchestration
+
+LangGraph connects all of the above into an automated pipeline with explicit conditional logic:
+
+- **START** → both emotion agents are activated in parallel (fan-out)
+- **Confidence gate** → after each intake turn, the graph checks: are both users ready? If no — loop back to whichever intake node(s) still need work. If yes — advance to simulation.
+- **Simulation ends** → mediator synthesizes → results stored → **END**
+
+LangGraph handles the parallel execution of two independent intake conversations, the conditional routing based on confidence, and the persistence of state across multiple HTTP requests — all within a single Python process, with no database.
+
+### 7. Mediator Synthesis
+
+When the mediator intervenes, it receives everything at once: both emotional profiles from intake, both conversation histories, and the full simulation transcript. It also receives each person's tone preference.
+
+It produces a single 6-section document: **What Happened**, **What Each Person Felt**, **Where You Actually Agree**, **The Core Tension**, **A Path Forward**, and **A Message to Each Person**. The last section is written twice — once addressed directly to Person A in their preferred tone, once to Person B in theirs. The same synthesis is stored for both users; the frontend surfaces each person's personal message prominently.
+
+### 8. Deployment
+
+The backend (FastAPI) runs as a Docker container on Google Cloud Run — serverless, meaning it scales automatically and costs nothing when idle. The frontend (React + nginx) runs as a separate Cloud Run service serving the compiled static bundle.
+
+All AI models run on Vertex AI within a single GCP project — no external API keys, no per-request billing outside GCP. The pre-built ChromaDB vector store is baked into the backend Docker image, so there is no separate database or vector store service to manage at runtime.
+
+---
+
 ## Architecture Diagram
 
 ```
